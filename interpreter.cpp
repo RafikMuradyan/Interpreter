@@ -413,19 +413,20 @@ void print(std::string line, Nums arr_numb[], Words arr_word[], Bools arr_bool[]
         if (output == arr_numb[i].name)
         {
             std::cout << arr_numb[i].value << std::endl;
-            break;
+            return;
         }
         else if (output == arr_word[i].name)
         {
             std::cout << arr_word[i].value << std::endl;
-            break;
+            return;
         }
         else if (output == arr_bool[i].name)
         {
             std::cout << arr_bool[i].value << std::endl;
-            break;    
+            return;    
         }       
-    }   
+    } 
+    std::cout << output << std::endl;
 }
 
 bool do_if (Nums arr_number[], std::string line)
