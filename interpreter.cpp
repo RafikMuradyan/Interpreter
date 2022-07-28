@@ -2,7 +2,7 @@
 #include <string>
 #include <fstream>
 
-std::string keywords[]{"numb", "word", "bool", "show", "doif", "ever", "end:"};
+std::string keywords[] {"numb", "word", "bool", "show", "doif", "ever", "end:"};
 const int DIGIT = keywords[0].length();
 const int SIZE = 10;
 
@@ -66,13 +66,13 @@ int main()
     int linecount {};
     while (!text.eof())
     { 
-        getline(text,line);
+        getline(text, line);
         ++linecount;
-        if (line.substr(0,DIGIT) == keywords[6] && !test_for_ever)
+        if (line.substr(0, DIGIT) == keywords[6] && !test_for_ever)
         {
             test_for_if = true;
         }
-        else if (line.substr(0,DIGIT) == keywords[6] && test_for_ever )
+        else if (line.substr(0, DIGIT) == keywords[6] && test_for_ever )
         {
             linecount = ever_line;
 			text.close();
@@ -132,7 +132,7 @@ int main()
             int is_it_keyword = 0;
             for (int i = 0; i < sizeof(keywords)/sizeof(keywords[0]); i++)
             {
-                if (line.substr(0,DIGIT) == keywords[i])
+                if (line.substr(0, DIGIT) == keywords[i])
                 {
                     ++is_it_keyword;
                 }   
@@ -229,7 +229,7 @@ Words make_word (std::string line)
         }   
     }
     
-    for (int i = (DIGIT+2) + name.length() ; i < line.length(); i++)
+    for (int i = ( DIGIT + 2 ) + name.length() ; i < line.length(); i++)
     {
         if (line[i] != ' ')
         {
@@ -252,7 +252,7 @@ Bools make_bool (std::string line)
     Bools object;
     std::string name{};
 
-    for (int i = (DIGIT+1) ;i < line.length(); i++)
+    for (int i = ( DIGIT + 1 ) ;i < line.length(); i++)
     {
         if (line[i] != ' ')
         {
