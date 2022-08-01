@@ -1,10 +1,10 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+#define SIZE 256
 
 std::string keywords[] {"numb", "word", "bool", "show", "doif", "ever", "end:"};
 const int DIGIT = keywords[0].length();
-const int SIZE = 10;
 
 struct Nums
 {
@@ -182,9 +182,7 @@ Nums make_numb (std::string line)
         if (line[i] != ' ')
         {
             name.push_back(line[i]);
-        }  
-        else
-        {
+        } else {
             break;
         }   
     }
@@ -199,9 +197,7 @@ Nums make_numb (std::string line)
         if (line[i] != ' ')
         {
             value.push_back(line[i]);
-        }
-        else
-        {
+        } else {
             break;
         }   
     }
@@ -222,9 +218,7 @@ Words make_word (std::string line)
         if (line[i] != ' ')
         {
             name.push_back(line[i]);
-        }  
-        else
-        {
+        } else {
             break;
         }   
     }
@@ -234,9 +228,7 @@ Words make_word (std::string line)
         if (line[i] != ' ')
         {
             value.push_back(line[i]);
-        }
-        else
-        {
+        } else {
             break;
         }   
     }
@@ -257,9 +249,7 @@ Bools make_bool (std::string line)
         if (line[i] != ' ')
         {
             name.push_back(line[i]);
-        }  
-        else
-        {
+        } else {
             break;
         }   
     }
@@ -267,9 +257,7 @@ Bools make_bool (std::string line)
     if (line[(DIGIT+2) + name.length()] == '0' || line[(DIGIT+2) + name.length()] == 'F' )
     {
         object.value = 0;
-    }
-    else
-    {
+    } else {
         object.value = 1;
     }
     object.name = name;
@@ -289,9 +277,7 @@ double operation_number (Nums numbers[], std::string test_name, std::string line
             line[i] != '>' && line[i] != '(' && line[i] != ')' )
         {
             first.push_back(line[i]);
-        }
-        else
-        {
+        } else {
             break;
         }           
     }
@@ -301,9 +287,7 @@ double operation_number (Nums numbers[], std::string test_name, std::string line
         if (line[i] != ' ' )
         {
             second.push_back(line[i]);
-        }
-        else
-        {
+        } else {
             break;
         }       
     }
